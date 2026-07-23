@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TICKET_NAME}} - Transcript</title>
+    <style>
+        body { background-color: #313338; color: #dbdee1; font-family: 'gg sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; }
+        .header { border-bottom: 1px solid #1e1f22; padding-bottom: 15px; margin-bottom: 25px; }
+        .header h1 { margin: 0; font-size: 24px; color: #f2f3f5; }
+        .header p { margin: 5px 0 0 0; color: #949ba4; font-size: 14px; }
+        .message { display: flex; margin-bottom: 20px; word-wrap: break-word; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .content { flex: 1; min-width: 0; }
+        .meta { margin-bottom: 4px; display: flex; align-items: baseline; }
+        .username { font-weight: 600; color: #f2f3f5; margin-right: 8px; font-size: 16px; }
+        .timestamp { font-size: 12px; color: #949ba4; }
+        .text { line-height: 1.5; font-size: 15px; white-space: pre-wrap; }
+        .mention { background-color: rgba(88, 101, 242, 0.3); color: #c9cdfb; padding: 0 2px; border-radius: 3px; font-weight: 500; }
+        .attachment { max-width: 100%; max-height: 350px; border-radius: 8px; margin-top: 8px; display: block; }
+        a { color: #00a8fc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .discord-embed { background-color: #2b2d31; border-left: 4px solid #202225; border-radius: 4px; padding: 12px; margin-top: 8px; max-width: 500px; }
+        .embed-author { font-size: 14px; font-weight: 600; color: #ffffff; margin-bottom: 6px; }
+        .embed-title { font-weight: 600; color: #ffffff; margin-bottom: 6px; }
+        .embed-desc { font-size: 14px; margin-bottom: 8px; color: #dbdee1; white-space: pre-wrap; }
+        .embed-field { margin-bottom: 8px; }
+        .embed-field-name { font-weight: 600; font-size: 14px; color: #ffffff; margin-bottom: 2px; }
+        .embed-field-value { font-size: 14px; color: #dbdee1; white-space: pre-wrap; }
+        .embed-footer { font-size: 12px; color: #949ba4; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{TICKET_NAME}}</h1>
+        <p>{{SERVER_NAME}} - Generiertes Transkript</p>
+    </div>
+    <div class="messages">
+        {{MESSAGES}}
+    </div>
+</body>
+</html>
