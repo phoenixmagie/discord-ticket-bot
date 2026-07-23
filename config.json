@@ -1,22 +1,70 @@
 {
+  "github_settings": {
+    "repository_owner": "YOUR_GITHUB_USERNAME",
+    "repository_name": "YOUR_GITHUB_REPOSITORY",
+    "tickets_path": "YOUR_FOLDER",
+    "base_transcript_url": "YOUR_DOMAIN_WHERE_THE_TRANSCRIPTS_ARE_HERE"
+  },
+  "ticket_settings": {
+    "support_role_id": "YOUR_SUPPORT_ROLE_ID",
+    "category_id": "YOUR_CATEGORY_ID",
+    "name_format": "ticket-{id}-{categorie}",
+    "inside_embed": {
+      "title": "Ticket: {categorie}",
+      "description": "Welcome <@{user}>! A staff member will assist you shortly.",
+      "color": "#00ff00"
+    }
+  },
+  "transcript_settings": {
+    "log_channel_id": "YOUR_LOG_CHANNEL_ID"
+  },
+  "texts": {
+    "log_title": "Ticket Closed",
+    "log_desc": "Ticket **{ticket_name}** closed by <@{user_id}>.\nReason: {reason}\nTranscript: {url}",
+    "txt_no_reason": "No reason provided",
+    "btn_claim": "Claim Ticket",
+    "btn_close_reason": "Close with Reason",
+    "btn_dashboard": "Team Dashboard",
+    "btn_yes": "Yes",
+    "btn_no": "No",
+    "btn_accept_close": "Accept Close Request",
+    "dash_placeholder": "Select an action...",
+    "dash_unclaim": "Unclaim Ticket",
+    "dash_close": "Close Immediately",
+    "dash_close_reason": "Close with Reason",
+    "dash_closereq": "Request Close",
+    "dash_closereq_reason": "Request Close with Reason",
+    "modal_reason_title": "Close Reason",
+    "modal_reason_input": "Enter reason:",
+    "msg_ticket_created": "Your ticket has been created: <#{channel}>",
+    "msg_claimed": "Ticket claimed by <@{user}>.",
+    "msg_unclaimed": "Ticket unclaimed and released to the support team.",
+    "msg_action_done": "Action executed successfully.",
+    "msg_closing": "Closing ticket...",
+    "msg_closing_reason": "Closing ticket with reason...",
+    "msg_close_accepted": "Close request accepted.",
+    "msg_request_sent": "Close request sent to user.",
+    "closereq_msg": "A staff member requested to close this ticket. Click below to accept.",
+    "closereq_msg_reason": "Close request: {reason}\nClick below to accept.",
+    "confirm_close": "Are you sure you want to close this ticket?",
+    "txt_reason_accepted": "Close request accepted by user",
+    "err_no_perms": "You do not have permission to use this action.",
+    "err_no_config": "Configuration file could not be loaded."
+  },
+  "ticket_counter": 0,
   "setup_embed": {
     "title": "Support Tickets",
     "description": "Select a category below to open a ticket.",
     "color": "#0099ff"
   },
-  "menu_placeholder": "Select a category",
+  "menu_placeholder": "Select a category...",
   "categories": [
     {
       "label": "General Support",
       "description": "Questions and general help",
       "value": "general_support",
-      "emoji": "❓"
-    },
-    {
-      "label": "Technical Issues",
-      "description": "Report bugs or connection problems",
-      "value": "tech_issues",
-      "emoji": "🛠️"
+      "emoji": "❓",
+      "role_id": "YOUR_SUPPORT_ROLE_ID"
     }
   ]
 }
