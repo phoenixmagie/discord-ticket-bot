@@ -57,6 +57,28 @@ if (fs.existsSync(eventsPath)) {
     }
 }
 
+// Slash-Commands verarbeiten / Handle incoming slash commands
+client.on('interactionCreate', async (interaction) => {
+    if (!interaction.isChatInputCommand()) return;
+
+    const command = client.commands.get(interaction.commandName);
+    if (!command) return;
+
+    try {
+        await command.execute(interaction);
+    } catch (error) {
+        // Fehler-Handling für Befehle / Error handling for commands
+        console.error(chalk.red(`❌ Fehler beim Ausführen von / Error executing /${interaction.commandName}:`), error);
+        
+        const errorMessage = { content: '❌ Fehler beim Ausführen des Befehls.', ephemeral: true };
+        if (interaction.replied || interaction.deferred) {
+            await interaction.followUp(errorMessage);
+        } else {
+            await interaction.reply(errorMessage);
+        }
+    }
+});
+
 client.once('ready', async () => {
     console.log(chalk.green(`\n✅ Eingeloggt als / Logged in as ${chalk.bold(client.user.tag)}`));
 
@@ -74,7 +96,6 @@ client.once('ready', async () => {
     try {
         console.log(chalk.blue('🔄 Aktualisiere Commands auf Discord... / Syncing commands to Discord...'));
 
-        // Registriert Befehle direkt in der Test-Gilde / Registers commands directly to the dev guild
         await rest.put(
             Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
             { body: commandsArray },
