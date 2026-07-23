@@ -1,0 +1,29 @@
+name: Sync Repository 1:1 to Pelican (Strict SFTP)
+
+on:
+  push:
+    branches:
+      - '*' # Reagiert auf jeden Branch / Triggers on every branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    continue-on-error: true # Fehler abfangen / Prevent workflow failure emails
+    steps:
+      - name: 1. Code aus Git auschecken / Checkout git code
+        uses: actions/checkout@v4
+
+      - name: 2. 1:1 Spiegelung via LFTP (Strict SFTP) / 1:1 Mirror via LFTP
+        env:
+          SFTP_USER: ${{ secrets.PELICAN_SFTP_USER }}
+          SFTP_PASS: ${{ secrets.PELICAN_SFTP_PASSWORD }}
+          SFTP_HOST: ${{ secrets.PELICAN_SFTP_HOST }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          lftp -e "
+            set sftp:connect-program 'ssh -a -x -p 2022 -o StrictHostKeyChecking=no';
+            set sftp:auto-confirm yes;
+            open -u '$SFTP_USER','$SFTP_PASS' sftp://$SFTP_HOST;
+            mirror --reverse --delete --verbose ./ ./;
+            quit;
+          "
