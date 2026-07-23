@@ -1,0 +1,22 @@
+{
+  "setup_embed": {
+    "title": "Support Tickets",
+    "description": "Select a category below to open a ticket.",
+    "color": "#0099ff"
+  },
+  "menu_placeholder": "Select a category",
+  "categories": [
+    {
+      "label": "General Support",
+      "description": "Questions and general help",
+      "value": "general_support",
+      "emoji": "❓"
+    },
+    {
+      "label": "Technical Issues",
+      "description": "Report bugs or connection problems",
+      "value": "tech_issues",
+      "emoji": "🛠️"
+    }
+  ]
+}
