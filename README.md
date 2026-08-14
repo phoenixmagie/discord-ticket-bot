@@ -43,10 +43,9 @@ Eine hochflexible, voll konfigurierbare und professionelle **Discord Ticket Bot*
 discord-ticket-bot/
 ├── config.json         # Hauptkonfigurationsdatei (Texte, Rollen, Kategorien)
 ├── .env                # Sensible Daten (Tokens, IDs)
-├── .env.example        # Vorlage für die Umgebungsvariablen
 ├── package.json        # Node.js Abhängigkeiten
 ├── README.md           # Projektdokumentation
-└── src/                # Quellcode des Bots
+└──                 # Quellcode des Bots
 
 🛠️ Voraussetzungen
 Stelle sicher, dass folgende Komponenten vor der Installation eingerichtet sind:
