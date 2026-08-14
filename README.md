@@ -52,8 +52,7 @@ discord-ticket-bot/
 ├── README.md                    # Projektdokumentation
 ├── config.json                  # Hauptkonfiguration (Texte, Kategorien, Rollen)
 ├── index.js                     # Haupteinstiegspunkt des Bots
-└── package.json                 # Node.js Abhängigkeiten & Scripts
-```
+└── package.json                 # Node.js Abhängigkeiten & Scripts```
 
 # 🛠️ Voraussetzungen
 Stelle sicher, dass folgende Komponenten vor der Installation eingerichtet sind:
