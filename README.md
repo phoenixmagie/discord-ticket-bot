@@ -83,9 +83,6 @@ GITHUB_TOKEN=DEIN_GITHUB_PERSONAL_ACCESS_TOKEN_HIER
 npm start
 
 ⚙️ Konfiguration
-1. Umgebungsvariablen (.env)
-Siehe Schritt 3 bei der Installation.
-2. Bot-Einstellungen (config.json)
 Sämtliche Texte, Rollen und Kategorien werden bequem über die config.json angepasst:
 {
   "github_settings": {
