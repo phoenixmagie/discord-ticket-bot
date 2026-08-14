@@ -52,9 +52,9 @@ discord-ticket-bot/
 ├── README.md                    # Projektdokumentation
 ├── config.json                  # Hauptkonfiguration (Texte, Kategorien, Rollen)
 ├── index.js                     # Haupteinstiegspunkt des Bots
-└── package.json                 # Node.js Abhängigkeiten & Scripts```
+└── package.json                 # Node.js Abhängigkeiten & Scripts
 
-# 🛠️ Voraussetzungen
+🛠️ Voraussetzungen
 Stelle sicher, dass folgende Komponenten vor der Installation eingerichtet sind:
  * Node.js: Version 18.0.0 oder höher.
  * Discord Developer Bot Token:
@@ -63,30 +63,31 @@ Stelle sicher, dass folgende Komponenten vor der Installation eingerichtet sind:
  * GitHub Personal Access Token (PAT):
    * Wird benötigt, um Transkripte automatisch in ein GitHub-Repository hochzuladen.
    * Erstelle ein Token unter GitHub Einstellungen -> Developer Settings -> Personal Access Tokens mit Schreibrechten (repo).
-
-# 🚀 Installation & Schnellstart
-## 1. Repository klonen oder als Template nutzen
+🚀 Installation & Schnellstart
+1. Repository klonen oder als Template nutzen
 Klicke oben auf "Use this template" oder klone das Repository manuell:
-`git clone [https://github.com/phoenixmagie/discord-ticket-bot.git](https://github.com/phoenixmagie/discord-ticket-bot.git)`
-`cd discord-ticket-bot`
+git clone [https://github.com/phoenixmagie/discord-ticket-bot.git](https://github.com/phoenixmagie/discord-ticket-bot.git)
+cd discord-ticket-bot
 
-## 2. Abhängigkeiten installieren
-`npm install`
+2. Abhängigkeiten installieren
+npm install
 
-## 3. Umgebungsvariablen einrichten
-Erstelle eine .env-Datei im Hauptverzeichnis und trage deine Tokens ein.
-```DISCORD_TOKEN=DEIN_DISCORD_BOT_TOKEN_HIER
+3. Umgebungsvariablen einrichten
+Erstelle eine .env-Datei im Hauptverzeichnis und trage deine Tokens ein:
+DISCORD_TOKEN=DEIN_DISCORD_BOT_TOKEN_HIER
 CLIENT_ID=DEIN_BOT_CLIENT_ID_HIER
 GUILD_ID=DEIN_DISCORD_SERVER_ID_HIER
-GITHUB_TOKEN=DEIN_GITHUB_PERSONAL_ACCESS_TOKEN_HIER```
+GITHUB_TOKEN=DEIN_GITHUB_PERSONAL_ACCESS_TOKEN_HIER
 
 4. Bot starten
-# Bot starten
-`npm start`
+npm start
 
-⚙️ Konfiguration (config.json)
-Sämtliche Texte, Rollen und Kategorien werden bequem über die config.json angepasst.
-```{
+⚙️ Konfiguration
+1. Umgebungsvariablen (.env)
+Siehe Schritt 3 bei der Installation.
+2. Bot-Einstellungen (config.json)
+Sämtliche Texte, Rollen und Kategorien werden bequem über die config.json angepasst:
+{
   "github_settings": {
     "repository_owner": "YOUR_GITHUB_USERNAME",
     "repository_name": "YOUR_GITHUB_REPOSITORY",
@@ -155,14 +156,14 @@ Sämtliche Texte, Rollen und Kategorien werden bequem über die config.json ange
       "role_id": "YOUR_SUPPORT_ROLE_ID"
     }
   ]
-}```
+}
 
 🖥️ Team Dashboard & Funktionen
 Support-Mitarbeiter erhalten über den Team Dashboard-Button Zugriff auf praktische Verwalter-Funktionen:
  * Ticket Claimen / Unclaimen: Das Ticket einem Supporter zuweisen oder wieder freigeben.
  * Schließung anfragen: Fordert den User auf, das Schließen des Tickets per Button zu bestätigen.
  * Schließen mit Grund: Öffnet ein Modal, um einen Schließungsgrund anzugeben, der im Log-Embed und Transkript vermerkt wird.
-📝 Transkript-System (assets/transcript-template.html)
+📝 Transkript-System (GitHub Integration)
 Sobald ein Ticket geschlossen wird:
  * Der Bot liest alle Nachrichten des Kanals aus.
  * Das Ergebnis wird mithilfe der Vorlage assets/transcript-template.html als HTML-Datei aufbereitet.
@@ -170,15 +171,21 @@ Sobald ein Ticket geschlossen wird:
 ❓ FAQ & Troubleshooting
 <details>
 <summary><b>1. Der Bot startet nicht / Token-Fehler</b></summary>
-Stelle sicher, dass deine .env-Datei existiert und der DISCORD_TOKEN korrekt hinterlegt ist.
+
+
+Stelle sicher, dass deine <code>.env</code>-Datei existiert und der <code>DISCORD_TOKEN</code> korrekt hinterlegt ist.
 </details>
 <details>
 <summary><b>2. Die Dropdown-Menüs / Buttons reagieren nicht</b></summary>
+
+
 Prüfe im Discord Developer Portal, ob die <b>Message Content Intent</b> und <b>Server Members Intent</b> aktiviert sind.
 </details>
 <details>
 <summary><b>3. Der Zähler (ticket_counter) erhöht sich nicht</b></summary>
-Der Bot liest und aktualisiert den ticket_counter direkt in der config.json. Stelle sicher, dass der Bot Schreibrechte in seinem Stammverzeichnis besitzt.
+
+
+Der Bot liest und aktualisiert den <code>ticket_counter</code> direkt in der <code>config.json</code>. Stelle sicher, dass der Bot Schreibrechte in seinem Stammverzeichnis besitzt.
 </details>
 📜 Lizenz
 Dieses Projekt ist unter der Apache License 2.0 lizenziert. Weitere Informationen findest du in der Datei LICENSE.
