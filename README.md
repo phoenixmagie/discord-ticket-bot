@@ -53,8 +53,9 @@ discord-ticket-bot/
 ├── config.json                  # Hauptkonfiguration (Texte, Kategorien, Rollen)
 ├── index.js                     # Haupteinstiegspunkt des Bots
 └── package.json                 # Node.js Abhängigkeiten & Scripts
+```
 
-🛠️ Voraussetzungen
+# 🛠️ Voraussetzungen
 Stelle sicher, dass folgende Komponenten vor der Installation eingerichtet sind:
  * Node.js: Version 18.0.0 oder höher.
  * Discord Developer Bot Token:
@@ -63,29 +64,30 @@ Stelle sicher, dass folgende Komponenten vor der Installation eingerichtet sind:
  * GitHub Personal Access Token (PAT):
    * Wird benötigt, um Transkripte automatisch in ein GitHub-Repository hochzuladen.
    * Erstelle ein Token unter GitHub Einstellungen -> Developer Settings -> Personal Access Tokens mit Schreibrechten (repo).
-🚀 Installation & Schnellstart
-1. Repository klonen oder als Template nutzen
+
+# 🚀 Installation & Schnellstart
+## 1. Repository klonen oder als Template nutzen
 Klicke oben auf "Use this template" oder klone das Repository manuell:
-git clone [https://github.com/DEIN_USERNAME/discord-ticket-bot.git](https://github.com/DEIN_USERNAME/discord-ticket-bot.git)
-cd discord-ticket-bot
+`git clone [https://github.com/phoenixmagie/discord-ticket-bot.git](https://github.com/phoenixmagie/discord-ticket-bot.git)`
+`cd discord-ticket-bot`
 
-2. Abhängigkeiten installieren
-npm install
+## 2. Abhängigkeiten installieren
+`npm install`
 
-3. Umgebungsvariablen einrichten
+## 3. Umgebungsvariablen einrichten
 Erstelle eine .env-Datei im Hauptverzeichnis und trage deine Tokens ein.
-DISCORD_TOKEN=DEIN_DISCORD_BOT_TOKEN_HIER
+```DISCORD_TOKEN=DEIN_DISCORD_BOT_TOKEN_HIER
 CLIENT_ID=DEIN_BOT_CLIENT_ID_HIER
 GUILD_ID=DEIN_DISCORD_SERVER_ID_HIER
-GITHUB_TOKEN=DEIN_GITHUB_PERSONAL_ACCESS_TOKEN_HIER
+GITHUB_TOKEN=DEIN_GITHUB_PERSONAL_ACCESS_TOKEN_HIER```
 
 4. Bot starten
 # Bot starten
-npm start
+`npm start`
 
 ⚙️ Konfiguration (config.json)
 Sämtliche Texte, Rollen und Kategorien werden bequem über die config.json angepasst.
-{
+```{
   "github_settings": {
     "repository_owner": "YOUR_GITHUB_USERNAME",
     "repository_name": "YOUR_GITHUB_REPOSITORY",
@@ -154,7 +156,7 @@ Sämtliche Texte, Rollen und Kategorien werden bequem über die config.json ange
       "role_id": "YOUR_SUPPORT_ROLE_ID"
     }
   ]
-}
+}```
 
 🖥️ Team Dashboard & Funktionen
 Support-Mitarbeiter erhalten über den Team Dashboard-Button Zugriff auf praktische Verwalter-Funktionen:
